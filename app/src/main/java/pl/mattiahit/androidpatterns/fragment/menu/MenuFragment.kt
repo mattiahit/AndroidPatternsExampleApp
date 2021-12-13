@@ -1,4 +1,4 @@
-package pl.mattiahit.androidpatterns.menu
+package pl.mattiahit.androidpatterns.fragment.menu
 
 import android.os.Bundle
 import android.view.View

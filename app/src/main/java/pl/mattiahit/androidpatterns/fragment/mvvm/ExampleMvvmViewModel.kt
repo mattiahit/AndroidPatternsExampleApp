@@ -1,4 +1,4 @@
-package pl.mattiahit.androidpatterns.mvvm
+package pl.mattiahit.androidpatterns.fragment.mvvm
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel

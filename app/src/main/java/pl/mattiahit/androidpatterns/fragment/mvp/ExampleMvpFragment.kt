@@ -1,4 +1,4 @@
-package pl.mattiahit.androidpatterns.mvp
+package pl.mattiahit.androidpatterns.fragment.mvp
 
 import android.os.Bundle
 import android.view.View

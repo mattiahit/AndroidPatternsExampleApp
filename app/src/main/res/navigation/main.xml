@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/menuFragment"
-        android:name="pl.mattiahit.androidpatterns.menu.MenuFragment"
+        android:name="pl.mattiahit.androidpatterns.fragment.menu.MenuFragment"
         android:label="MenuFragment" >
         <action
             android:id="@+id/action_menuFragment_to_exampleMvpFragment"
@@ -20,7 +20,7 @@
     </fragment>
     <fragment
         android:id="@+id/exampleMvpFragment"
-        android:name="pl.mattiahit.androidpatterns.mvp.ExampleMvpFragment"
+        android:name="pl.mattiahit.androidpatterns.fragment.mvp.ExampleMvpFragment"
         android:label="ExampleMvpFragment" >
         <action
             android:id="@+id/action_exampleMvpFragment_to_menuFragment"
@@ -30,7 +30,7 @@
     </fragment>
     <fragment
         android:id="@+id/exampleMvvmFragment"
-        android:name="pl.mattiahit.androidpatterns.mvvm.ExampleMvvmFragment"
+        android:name="pl.mattiahit.androidpatterns.fragment.mvvm.ExampleMvvmFragment"
         android:label="ExampleMvvmFragment" >
         <action
             android:id="@+id/action_exampleMvvmFragment_to_menuFragment"
