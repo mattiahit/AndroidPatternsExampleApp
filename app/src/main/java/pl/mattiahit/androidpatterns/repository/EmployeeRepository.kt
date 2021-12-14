@@ -7,11 +7,11 @@ import pl.mattiahit.androidpatterns.model.Employee
 import java.lang.Exception
 import java.nio.charset.Charset
 
-class EmployeeRepository (private val context: Context) {
+class EmployeeRepository (private val context: Context?) {
 
     fun loadEmplyeeList(): List<Employee> {
         val resultList = mutableListOf<Employee>()
-        try {
+        context?.let {
             val inputStream = context.assets.open("data.json")
             val inputSize = inputStream.available()
             val buffer = ByteArray(inputSize)
@@ -23,8 +23,6 @@ class EmployeeRepository (private val context: Context) {
                     resultList.add(Gson().fromJson(jsonObj, Employee::class.java))
                 }
             }
-        }catch (e: Exception){
-            Log.e(javaClass.name, e.message.toString())
         }
         return resultList
     }

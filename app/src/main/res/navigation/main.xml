@@ -17,6 +17,9 @@
         <action
             android:id="@+id/action_menuFragment_to_exampleMvvmFragment"
             app:destination="@id/exampleMvvmFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_exampleMvcFragment"
+            app:destination="@id/exampleMvcFragment" />
     </fragment>
     <fragment
         android:id="@+id/exampleMvpFragment"
@@ -34,6 +37,14 @@
         android:label="ExampleMvvmFragment" >
         <action
             android:id="@+id/action_exampleMvvmFragment_to_menuFragment"
+            app:destination="@id/menuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/exampleMvcFragment"
+        android:name="pl.mattiahit.androidpatterns.fragment.mvc.ExampleMvcFragment"
+        android:label="ExampleMvcFragment" >
+        <action
+            android:id="@+id/action_exampleMvcFragment_to_menuFragment"
             app:destination="@id/menuFragment" />
     </fragment>
 </navigation>

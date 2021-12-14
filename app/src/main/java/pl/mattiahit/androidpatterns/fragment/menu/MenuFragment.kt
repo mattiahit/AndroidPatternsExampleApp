@@ -22,5 +22,9 @@ class MenuFragment: Fragment(R.layout.fragment_menu) {
         binding.btnMvvm.setOnClickListener {
             Navigation.findNavController(view).navigate(R.id.action_menuFragment_to_exampleMvvmFragment)
         }
+
+        binding.btnMvc.setOnClickListener {
+            Navigation.findNavController(view).navigate(R.id.action_menuFragment_to_exampleMvcFragment)
+        }
     }
 }
