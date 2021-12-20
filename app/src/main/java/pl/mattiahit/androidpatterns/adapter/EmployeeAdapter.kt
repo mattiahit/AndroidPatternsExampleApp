@@ -4,9 +4,10 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import pl.mattiahit.androidpatterns.databinding.ItemEmployeeBinding
+import pl.mattiahit.androidpatterns.fragment.mvc.EmployeeClickedListener
 import pl.mattiahit.androidpatterns.model.Employee
 
-class EmployeeAdapter(private val employees: List<Employee>): RecyclerView.Adapter<EmployeeAdapter.EmployeeViewHolder>() {
+class EmployeeAdapter(private val employees: List<Employee>, private val employeeClickedListener: EmployeeClickedListener): RecyclerView.Adapter<EmployeeAdapter.EmployeeViewHolder>() {
 
     inner class EmployeeViewHolder(val binding: ItemEmployeeBinding): RecyclerView.ViewHolder(binding.root)
 
@@ -19,6 +20,9 @@ class EmployeeAdapter(private val employees: List<Employee>): RecyclerView.Adapt
         holder.binding.apply {
             tvEmployeeName.text = employees[position].name
             tvEmployeeEmail.text = employees[position].email
+        }
+        holder.binding.root.setOnClickListener {
+            employeeClickedListener.onEmployeeClicked(employees[position])
         }
     }
 
