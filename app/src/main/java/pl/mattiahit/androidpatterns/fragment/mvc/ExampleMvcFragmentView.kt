@@ -1,13 +1,11 @@
 package pl.mattiahit.androidpatterns.fragment.mvc
 
+import pl.mattiahit.androidpatterns.common.ObservableViewMvc
 import pl.mattiahit.androidpatterns.model.Employee
 
-interface ExampleMvcFragmentView {
+interface ExampleMvcFragmentView : ObservableViewMvc<ExampleMvcFragmentView.Listener> {
     interface Listener {
         fun onEmployeeClicked(employee: Employee)
     }
-
-    fun registerListener(listener: Listener)
-    fun unregisterListener(listener: Listener)
     fun bindEmployees(employees: List<Employee>)
 }

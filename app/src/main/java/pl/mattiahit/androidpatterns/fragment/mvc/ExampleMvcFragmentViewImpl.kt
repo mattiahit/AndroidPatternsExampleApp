@@ -1,6 +1,7 @@
 package pl.mattiahit.androidpatterns.fragment.mvc
 
 import android.content.Context
+import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import pl.mattiahit.androidpatterns.adapter.EmployeeAdapter
 import pl.mattiahit.androidpatterns.databinding.FragmentMvcBinding
@@ -20,7 +21,7 @@ class ExampleMvcFragmentViewImpl(private val binding: FragmentMvcBinding): Emplo
     }
 
     private fun getContext(): Context {
-        return binding.root.context
+        return getRootView().context
     }
 
     override fun onEmployeeClicked(employee: Employee) {
@@ -30,9 +31,13 @@ class ExampleMvcFragmentViewImpl(private val binding: FragmentMvcBinding): Emplo
     }
 
     override fun bindEmployees(employees: List<Employee>) {
-        val adapter = EmployeeAdapter(employees, this)
+        val adapter = EmployeeAdapter(employees)
         binding.employeeList.adapter = adapter
         binding.employeeList.layoutManager = LinearLayoutManager(getContext())
+    }
+
+    override fun getRootView(): View {
+        return binding.root
     }
 
 
