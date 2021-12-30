@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import pl.mattiahit.androidpatterns.PatternsApplication
 import pl.mattiahit.androidpatterns.R
 import pl.mattiahit.androidpatterns.databinding.FragmentMvcBinding
 import pl.mattiahit.androidpatterns.model.Employee
@@ -17,7 +18,7 @@ class ExampleMvcFragment : Fragment(R.layout.fragment_mvc), ExampleMvcFragmentVi
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         exampleMvcFragmentViewImpl = ExampleMvcFragmentViewImpl(FragmentMvcBinding.bind(view))
-        repository = EmployeeRepository(context)
+        repository = (context?.applicationContext as PatternsApplication).getEmployeeRespository()
         val employees = repository.loadEmplyeeList()
         exampleMvcFragmentViewImpl.bindEmployees(employees)
         exampleMvcFragmentViewImpl.registerListener(this)
