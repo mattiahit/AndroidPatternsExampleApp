@@ -1,7 +1,7 @@
 {"employees":[
-  {"name":"Mohammed", "email":"smohi87@gmail.com"},
-  {"name":"Shyam", "email":"shyamjaiswal@gmail.com"},
-  {"name":"Bob", "email":"bob32@gmail.com"},
-  {"name":"Jai", "email":"jai87@gmail.com"},
-  {"name":"Czesio", "email":"cheslav@gmail.com"}
+  {"name":"Mohammed", "email":"smohi87@gmail.com", "role": "worker"},
+  {"name":"Shyam", "email":"shyamjaiswal@gmail.com", "role": "CEO"},
+  {"name":"Bob", "email":"bob32@gmail.com", "role": "driver"},
+  {"name":"Jai", "email":"jai87@gmail.com", "role": "assistant"},
+  {"name":"Czesio", "email":"cheslav@gmail.com", "role": "director"}
 ]}

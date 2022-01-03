@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.navigation.Navigation
 import pl.mattiahit.androidpatterns.PatternsApplication
 import pl.mattiahit.androidpatterns.R
 import pl.mattiahit.androidpatterns.databinding.FragmentMvcBinding
@@ -25,6 +26,11 @@ class ExampleMvcFragment : Fragment(R.layout.fragment_mvc), ExampleMvcFragmentVi
     }
 
     override fun onEmployeeClicked(employee: Employee) {
-        Toast.makeText(context, employee.toString(), Toast.LENGTH_SHORT).show()
+        //Toast.makeText(context, employee.toString(), Toast.LENGTH_SHORT).show()
+        //TODO make emplayee parcelable
+//        val bundle = Bundle()
+//        bundle.putParcelable("EmployeeParcelable", employee)
+//        Navigation.findNavController(exampleMvcFragmentViewImpl.getRootView())
+//            .navigate(R.id.action_exampleMvcFragment_to_exampleMvcDetailFragment, bundle)
     }
 }

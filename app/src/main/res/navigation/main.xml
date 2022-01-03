@@ -46,5 +46,16 @@
         <action
             android:id="@+id/action_exampleMvcFragment_to_menuFragment"
             app:destination="@id/menuFragment" />
+        <action
+            android:id="@+id/action_exampleMvcFragment_to_exampleMvcDetailFragment"
+            app:destination="@id/exampleMvcDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/exampleMvcDetailFragment"
+        android:name="pl.mattiahit.androidpatterns.fragment.mvc.ExampleMvcDetailFragment"
+        android:label="ExampleMvcDetailFragment" >
+        <action
+            android:id="@+id/action_exampleMvcDetailFragment_to_exampleMvcFragment"
+            app:destination="@id/exampleMvcFragment" />
     </fragment>
 </navigation>
