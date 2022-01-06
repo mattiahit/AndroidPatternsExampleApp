@@ -9,7 +9,9 @@ import pl.mattiahit.androidpatterns.databinding.ItemEmployeeBinding
 import pl.mattiahit.androidpatterns.fragment.mvc.EmployeeClickedListener
 import pl.mattiahit.androidpatterns.model.Employee
 
-class EmployeeAdapter(private val employees: List<Employee>): RecyclerView.Adapter<EmployeeAdapter.EmployeeViewHolder>(), EmployeeListItem.Listener {
+class EmployeeAdapter(private val employees: List<Employee>,
+                      private val parentListener: EmployeeClickedListener)
+    : RecyclerView.Adapter<EmployeeAdapter.EmployeeViewHolder>(), EmployeeListItem.Listener {
 
     private lateinit var context: Context
     inner class EmployeeViewHolder(val employeeListItem: EmployeeListItem): RecyclerView.ViewHolder(employeeListItem.getRootView())
@@ -31,6 +33,6 @@ class EmployeeAdapter(private val employees: List<Employee>): RecyclerView.Adapt
     }
 
     override fun onEmployeeClicked(employee: Employee) {
-        Toast.makeText(context, employee.toString(), Toast.LENGTH_SHORT).show()
+        parentListener.onEmployeeClicked(employee)
     }
 }
